@@ -6,5 +6,5 @@ python_max:
  - 3.15
 pebble_max:
  - 5.2.0
- - "*"
+ - 6
 zip_keys: [[python_min, python_max, pebble_max]]
