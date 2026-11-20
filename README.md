@@ -17,7 +17,7 @@ Orange add-on for spectral data analysis. Provides spectra and hyperspectra plot
 
 Current build status
 ====================
-
+#Dummy
 
 <table><tr>
     <td>All platforms:</td>
