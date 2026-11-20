@@ -23,8 +23,8 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - setuptools >=51.0.0
-    - pip >=19.3
+    - setuptools
+    - pip
     - numpy >=1.24.0
     - orange3 >=3.38.0
     - orange-canvas-core >=0.2.4
