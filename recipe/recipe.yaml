@@ -58,7 +58,9 @@ tests:
       python_version:
         - ${{ python_min }}.*
         - "*"
-  - requirements:
+  - script:
+      - python -c "import orangecontrib.spectroscopy"
+    requirements:
       run:
         # last one known as supported, job 20240702.2
         - xgboost ==2.0.3
