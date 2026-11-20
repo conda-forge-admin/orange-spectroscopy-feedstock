@@ -1,13 +1,13 @@
 {% set name = "orange-spectroscopy" %}
-{% set version = "0.9.3" %}
+{% set version = "0.9.4" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 2e999f44fe1518578366f7d4295c09bcd1db3aba1c42bb1fcb0f8b25d172cd97
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: c95279d4c20ac2c2b8cfc7a86e00a7122825749c6d4936a9b5b5520a52fb8178
 
 build:
   noarch: python
@@ -16,15 +16,13 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python {{ python_min }}.*
     - setuptools >=61.0
     - wheel
     - recommonmark
     - pip
   run:
-    - python >={{ python_min }}
-    - setuptools >=51.0.0
-    - pip >=19.3
+    - python >={{ python_min }},<{{ python_max }}
     - numpy >=1.24.0
     - orange3 >=3.38.0
     - orange-canvas-core >=0.2.4
@@ -42,7 +40,7 @@ requirements:
     - pillow >=9.2.0
     - lmfit >=1.3.3
     - bottleneck
-    - pebble
+    - pebble <={{ pebble_max }}
     - agilent-format >=0.4.5
     - pandas >=1.5.3
     - matplotlib-base
@@ -56,7 +54,7 @@ test:
     - pip check
   requires:
     - pip
-    - python {{ python_min }}
+    - python {{ python_min }}.*
     - xgboost =2.0.3 #last one known as supported, job 20240702.2
     - gwyfile =0.2.0 #versionning issue
 
